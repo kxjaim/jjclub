@@ -14,14 +14,13 @@
             max-width: 300px; /* Set a maximum width */
         }
 
-        /* CSS สำหรับเมนู */
         header {
             background-color: #007BFF; /* สีพื้นหลังของ header */
         }
 
         nav {
             display: flex;
-            justify-content: space-around; /* ปรับระยะห่างในหน้าจอเดสก์ท็อป */
+            justify-content: space-between; /* จัดระยะห่างในหน้าจอเดสก์ท็อป */
             flex-wrap: wrap; /* อนุญาตให้แท็กแยกออกเมื่อหน้าจอเล็กลง */
         }
 
@@ -36,6 +35,15 @@
             nav {
                 flex-direction: column; /* จัดเรียงลิงก์ในแนวตั้ง */
                 align-items: center; /* จัดกลางลิงก์ */
+                background-color: #007BFF; /* สีพื้นหลังของ nav */
+                position: absolute; /* ทำให้เมนูลอยในตำแหน่ง */
+                width: 100%; /* กำหนดความกว้างเต็ม */
+                top: 50px; /* ระยะห่างจากด้านบน */
+                display: none; /* ปิดการแสดงผลเริ่มต้น */
+            }
+
+            nav.active {
+                display: flex; /* แสดงเมื่อเปิดใช้งาน */
             }
 
             nav a {
@@ -43,13 +51,24 @@
                 width: 100%; /* เต็มความกว้างสำหรับลิงก์ในมือถือ */
                 text-align: center; /* จัดกลางข้อความ */
             }
+
+            /* ปุ่มเปิดเมนู */
+            .menu-toggle {
+                display: block; /* แสดงปุ่มในมือถือ */
+                cursor: pointer; /* แสดงเป็นตัวชี้ */
+                color: white; /* สีปุ่ม */
+                background: none; /* ไม่มีพื้นหลัง */
+                border: none; /* ไม่มีเส้นขอบ */
+                font-size: 18px; /* ขนาดตัวอักษร */
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <nav>
+            <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+            <nav id="nav">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
@@ -69,12 +88,12 @@
             <h2>THIS IS JJCLUB</h2>
             <div class="service-item">
                 <h3>JJCLUB Service</h3>
-                <img src="https://raw.githubusercontent.com/kxjaim/jjclub/main/JJCLUB.jpg" alt="JJCLUB Image"> <!-- Resized Image -->
+                <img src="https://raw.githubusercontent.com/kxjaim/jjclub/main/JJCLUB.jpg" alt="JJCLUB Image">
                 <p>Description of JJCLUB Service. It provides awesome features to help you.</p>
             </div>
             <div class="service-item">
                 <h3>My Son's Service</h3>
-                <img src="https://raw.githubusercontent.com/kxjaim/jjclub/main/Myson.jpg" alt="My Son Image"> <!-- Resized Image -->
+                <img src="https://raw.githubusercontent.com/kxjaim/jjclub/main/Myson.jpg" alt="My Son Image">
                 <p>Description of My Son's Service. It offers excellent benefits to users.</p>
             </div>
         </section>
@@ -97,5 +116,12 @@
             <p>&copy; 2025 My Beautiful Website. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("nav");
+            nav.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>

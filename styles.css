@@ -21,8 +21,8 @@ header {
 
 nav {
     display: flex;
-    justify-content: center; /* จัดให้อยู่กลาง */
-    flex-wrap: wrap; /* ทำให้เมนูสามารถ wrap ได้เมื่อพ้นขนาด */
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 10px;
 }
 
@@ -84,7 +84,7 @@ nav a:hover {
 
 .service-item {
     margin: 20px 0;
-    text-align: center; /* จัดกลางในมือถือ */
+    text-align: center;
 }
 
 footer {
@@ -98,21 +98,21 @@ footer p {
     margin: 0;
 }
 
-/* สำหรับ Responsive */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* เรียงเมนูตามแนวดิ่ง */
-        align-items: center; /* จัดกลาง */
+        flex-direction: column;
+        align-items: center;
     }
 
     nav a {
-        margin: 10px 0; /* เพิ่มพื้นที่ระหว่างเมนู */
-        width: 100%; /* ทำให้ลิงก์กว้างเต็มที่ */
+        margin: 10px 0;
+        width: 100%;
     }
 
     .service-item {
         display: flex;
-        flex-direction: column; /* เรียงตัวในรูปแบบคอลัมน์ */
-        align-items: center; /* จัดกลาง */
+        flex-direction: column;
+        align-items: center;
     }
 }

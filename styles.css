@@ -88,11 +88,12 @@ nav a:hover {
 }
 
 .service-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+    max-width: 80%; /* Limit the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensures margin auto works */
 }
-
 footer {
     background: #3498db;
     color: white;

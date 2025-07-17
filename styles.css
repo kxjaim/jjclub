@@ -87,6 +87,12 @@ nav a:hover {
     text-align: center;
 }
 
+.service-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 footer {
     background: #3498db;
     color: white;
@@ -107,7 +113,8 @@ footer p {
 
     nav a {
         margin: 10px 0;
-        width: 100%;
+        width: 80%; /* Responsive width for mobile users */
+        padding: 15px; /* Increased padding */
     }
 
     .service-item {

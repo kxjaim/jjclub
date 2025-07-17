@@ -6,63 +6,64 @@
     <title>Beautiful Web Layout</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .service-item img {
-            width: 100%; /* Set to 100% of the parent width */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 5px; /* Optional: rounded corners for images */
-            max-width: 300px; /* Set a maximum width */
-        }
+<style>
+    .service-item img {
+        width: 100%; /* Set to 100% of the parent width */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 5px; /* Optional: rounded corners for images */
+        max-width: 300px; /* Set a maximum width */
+    }
 
-        header {
-            background-color: #007BFF; /* สีพื้นหลังของ header */
-        }
+    header {
+        background-color: #007BFF; /* สีพื้นหลังของ header */
+        padding: 10px 15px; /* ลด padding ของ header */
+    }
 
+    nav {
+        display: flex;
+        justify-content: space-between; /* จัดระยะห่างในหน้าจอเดสก์ท็อป */
+        flex-wrap: wrap; /* อนุญาตให้แท็กแยกออกเมื่อหน้าจอเล็กลง */
+    }
+
+    nav a {
+        color: white; /* เปลี่ยนสีลิงก์ให้ชัดเจน */
+        padding: 5px 10px; /* ลด padding ของลิงก์ */
+        text-decoration: none; /* ลบเส้นใต้ */
+        font-size: 16px; /* ปรับขนาดตัวอักษร */
+    }
+
+    /* Media query สำหรับอุปกรณ์มือถือ */
+    @media (max-width: 600px) {
         nav {
-            display: flex;
-            justify-content: space-between; /* จัดระยะห่างในหน้าจอเดสก์ท็อป */
-            flex-wrap: wrap; /* อนุญาตให้แท็กแยกออกเมื่อหน้าจอเล็กลง */
+            flex-direction: column; /* จัดเรียงลิงก์ในแนวตั้ง */
+            align-items: center; /* จัดกลางลิงก์ */
+            background-color: #007BFF; /* สีพื้นหลังของ nav */
+            position: absolute; /* ทำให้เมนูลอยในตำแหน่ง */
+            width: 100%; /* กำหนดความกว้างเต็ม */
+            top: 50px; /* ระยะห่างจากด้านบน */
+            display: none; /* ปิดการแสดงผลเริ่มต้น */
+        }
+
+        nav.active {
+            display: flex; /* แสดงเมื่อเปิดใช้งาน */
         }
 
         nav a {
-            color: white; /* เปลี่ยนสีลิงก์ให้ชัดเจน */
-            padding: 10px; /* เพิ่ม padding เพื่อให้คลิกได้ง่าย */
-            text-decoration: none; /* ลบเส้นใต้ */
+            padding: 10px; /* เพิ่ม padding สำหรับลิงก์บนมือถือ */
+            width: 100%; /* เต็มความกว้างสำหรับลิงก์ในมือถือ */
+            text-align: center; /* จัดกลางข้อความ */
         }
 
-        /* Media query สำหรับอุปกรณ์มือถือ */
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column; /* จัดเรียงลิงก์ในแนวตั้ง */
-                align-items: center; /* จัดกลางลิงก์ */
-                background-color: #007BFF; /* สีพื้นหลังของ nav */
-                position: absolute; /* ทำให้เมนูลอยในตำแหน่ง */
-                width: 100%; /* กำหนดความกว้างเต็ม */
-                top: 50px; /* ระยะห่างจากด้านบน */
-                display: none; /* ปิดการแสดงผลเริ่มต้น */
-            }
-
-            nav.active {
-                display: flex; /* แสดงเมื่อเปิดใช้งาน */
-            }
-
-            nav a {
-                padding: 15px; /* เพิ่ม padding สำหรับลิงก์บนมือถือ */
-                width: 100%; /* เต็มความกว้างสำหรับลิงก์ในมือถือ */
-                text-align: center; /* จัดกลางข้อความ */
-            }
-
-            /* ปุ่มเปิดเมนู */
-            .menu-toggle {
-                display: block; /* แสดงปุ่มในมือถือ */
-                cursor: pointer; /* แสดงเป็นตัวชี้ */
-                color: white; /* สีปุ่ม */
-                background: none; /* ไม่มีพื้นหลัง */
-                border: none; /* ไม่มีเส้นขอบ */
-                font-size: 18px; /* ขนาดตัวอักษร */
-            }
+        .menu-toggle {
+            display: block; /* แสดงปุ่มในมือถือ */
+            cursor: pointer; /* แสดงเป็นตัวชี้ */
+            color: white; /* สีปุ่ม */
+            background: none; /* ไม่มีพื้นหลัง */
+            border: none; /* ไม่มีเส้นขอบ */
+            font-size: 18px; /* ขนาดตัวอักษร */
         }
-    </style>
+    }
+</style>
 </head>
 <body>
     <header>

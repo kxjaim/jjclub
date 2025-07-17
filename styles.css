@@ -19,11 +19,10 @@ header {
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-}
-
 nav {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่กลาง */
+    flex-wrap: wrap; /* ทำให้เมนูสามารถ wrap ได้เมื่อพ้นขนาด */
     margin-top: 10px;
 }
 
@@ -85,6 +84,7 @@ nav a:hover {
 
 .service-item {
     margin: 20px 0;
+    text-align: center; /* จัดกลางในมือถือ */
 }
 
 footer {
@@ -97,9 +97,22 @@ footer {
 footer p {
     margin: 0;
 }
-.service-item img {
-    width: 100%; /* Makes the image width adapt to its parent container */
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 5px; /* Optional: adds rounded corners to images */
-    max-width: 300px; /* Set a maximum width for the images */
+
+/* สำหรับ Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* เรียงเมนูตามแนวดิ่ง */
+        align-items: center; /* จัดกลาง */
+    }
+
+    nav a {
+        margin: 10px 0; /* เพิ่มพื้นที่ระหว่างเมนู */
+        width: 100%; /* ทำให้ลิงก์กว้างเต็มที่ */
+    }
+
+    .service-item {
+        display: flex;
+        flex-direction: column; /* เรียงตัวในรูปแบบคอลัมน์ */
+        align-items: center; /* จัดกลาง */
+    }
 }

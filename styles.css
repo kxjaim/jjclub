@@ -19,10 +19,11 @@ header {
     text-align: center;
 }
 
+header h1 {
+    margin: 0;
+}
+
 nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     margin-top: 10px;
 }
 
@@ -84,16 +85,8 @@ nav a:hover {
 
 .service-item {
     margin: 20px 0;
-    text-align: center;
 }
 
-.service-image {
-    max-width: 80%; /* Limit the width of the image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: rounded corners */
-    margin: 0 auto; /* Center the image */
-    display: block; /* Ensures margin auto works */
-}
 footer {
     background: #3498db;
     color: white;
@@ -104,23 +97,9 @@ footer {
 footer p {
     margin: 0;
 }
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 10px 0;
-        width: 80%; /* Responsive width for mobile users */
-        padding: 15px; /* Increased padding */
-    }
-
-    .service-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.service-item img {
+    width: 100%; /* Makes the image width adapt to its parent container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 5px; /* Optional: adds rounded corners to images */
+    max-width: 300px; /* Set a maximum width for the images */
 }
